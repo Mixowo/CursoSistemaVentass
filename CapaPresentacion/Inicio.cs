@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaEntidad;
+using CapaNegocio;
 using FontAwesome.Sharp;
 
 namespace CapaPresentacion
@@ -32,7 +33,7 @@ namespace CapaPresentacion
             {
                 MenuActivo.BackColor = Color.White;
             }
-            menu.BackColor = Color.Gray;
+            menu.BackColor = Color.DarkGray;
             MenuActivo = menu;
 
             if (FormularioActivo != null)
@@ -49,7 +50,7 @@ namespace CapaPresentacion
             contenedor.Controls.Add(formulario);
             formulario.Show();
         }
-        private void Usuarios_Click(object sender, EventArgs e)
+        private void Usuarios_Click(object sender, EventArgs e) //menuusuarios
         {
             AbrirFormulario((IconMenuItem)sender, new frmUsuarios());
         }
@@ -66,6 +67,18 @@ namespace CapaPresentacion
 
         private void Inicio_Load(object sender, EventArgs e)
         {
+            List<Permiso> ListaPermisos = new CN_Permiso().Listar(usuarioActual.IdUsuario);
+
+            foreach (IconMenuItem iconmenu in menu.Items)
+            {
+                bool encontrado = ListaPermisos.Any(m => m.NombreMenu == iconmenu.Name);
+
+                if (encontrado == false)
+                {
+                    iconmenu.Visible = false;
+                }
+            }
+
             lblUsuario.Text = usuarioActual.NombreCompleto;
         }
 
@@ -82,6 +95,41 @@ namespace CapaPresentacion
         private void submenuproducto_Click(object sender, EventArgs e)
         {
             AbrirFormulario(menumantenedor, new frmProducto());
+        }
+
+        private void submenuregistrar_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuventas, new frmVentas());
+        }
+
+        private void submenuverdetalleventa_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menuventas, new frmDetalleVenta());
+        }
+
+        private void submenuregistrarcompra_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menucompras, new frmCompras());
+        }
+
+        private void submenuverdetallecompra_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menucompras, new frmDetalleCompra());
+        }
+
+        private void menuclientes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmClientes());
+        }
+
+        private void menuproveedores_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmProveedores());
+        }
+
+        private void menureportes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario((IconMenuItem)sender, new frmReportes());
         }
     }
 }

@@ -10,11 +10,11 @@ namespace CapaNegocio
 {
     public class CN_Permiso
     {
-        private CD_Usuario objcd_Usuario = new CD_Usuario();
+        private CD_PERMISO objcd_permiso = new CD_PERMISO();
 
-        public List<Usuario> Listar()
+        public List<Permiso> Listar(int IdUsuario)
         {
-            return objcd_Usuario.Listar();
+            return objcd_permiso.Listar(IdUsuario);
         }
     }
 }
