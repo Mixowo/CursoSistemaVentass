@@ -20,9 +20,13 @@ namespace CapaPresentacion
         private static IconMenuItem MenuActivo = null;
         private static Form FormularioActivo = null;
 
-        public Inicio(Usuario objusuario)
+        public Inicio(Usuario objusuario = null)
         {
-            usuarioActual = objusuario;
+            if (objusuario == null) 
+                usuarioActual = new Usuario() { NombreCompleto = "ADMIN PREDETERMINADO", IdUsuario = 1 };
+            else
+                usuarioActual = objusuario;
+                   
             InitializeComponent();
         }
 
@@ -33,7 +37,7 @@ namespace CapaPresentacion
             {
                 MenuActivo.BackColor = Color.White;
             }
-            menu.BackColor = Color.DarkGray;
+            menu.BackColor = Color.Gray;
             MenuActivo = menu;
 
             if (FormularioActivo != null)
@@ -45,7 +49,6 @@ namespace CapaPresentacion
             formulario.TopLevel = false;
             formulario.FormBorderStyle = FormBorderStyle.None;
             formulario.Dock = DockStyle.Fill;
-            formulario.BackColor = Color.DarkGray;
 
             contenedor.Controls.Add(formulario);
             formulario.Show();

@@ -45,7 +45,7 @@
             this.label1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label1.ForeColor = System.Drawing.Color.DarkGray;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(333, 323);
@@ -66,14 +66,17 @@
             // 
             // btningresar
             // 
-            this.btningresar.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btningresar.BackColor = System.Drawing.Color.DarkGray;
             this.btningresar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btningresar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btningresar.FlatAppearance.BorderSize = 0;
+            this.btningresar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btningresar.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btningresar.ForeColor = System.Drawing.Color.Black;
             this.btningresar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btningresar.IconColor = System.Drawing.Color.Black;
             this.btningresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btningresar.Location = new System.Drawing.Point(397, 251);
+            this.btningresar.Location = new System.Drawing.Point(383, 251);
             this.btningresar.Name = "btningresar";
             this.btningresar.Size = new System.Drawing.Size(149, 44);
             this.btningresar.TabIndex = 2;
@@ -83,14 +86,16 @@
             // 
             // btncancelar
             // 
-            this.btncancelar.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btncancelar.BackColor = System.Drawing.Color.DarkGray;
             this.btncancelar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btncancelar.FlatAppearance.BorderSize = 0;
+            this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btncancelar.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancelar.ForeColor = System.Drawing.Color.Black;
             this.btncancelar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btncancelar.IconColor = System.Drawing.Color.Black;
             this.btncancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btncancelar.Location = new System.Drawing.Point(570, 251);
+            this.btncancelar.Location = new System.Drawing.Point(569, 251);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(143, 44);
             this.btncancelar.TabIndex = 3;

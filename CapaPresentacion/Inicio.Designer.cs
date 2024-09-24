@@ -57,6 +57,7 @@
             // menu
             // 
             this.menu.BackColor = System.Drawing.Color.White;
+            this.menu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.menu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuusuarios,
@@ -69,7 +70,7 @@
             this.menuacercade});
             this.menu.Location = new System.Drawing.Point(0, 89);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(1360, 83);
+            this.menu.Size = new System.Drawing.Size(1427, 83);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -83,6 +84,7 @@
             this.menuusuarios.IconSize = 50;
             this.menuusuarios.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.menuusuarios.Name = "menuusuarios";
+            this.menuusuarios.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.menuusuarios.Size = new System.Drawing.Size(100, 79);
             this.menuusuarios.Text = "Usuarios";
             this.menuusuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -267,7 +269,7 @@
             this.menutitulo.Location = new System.Drawing.Point(0, 0);
             this.menutitulo.Name = "menutitulo";
             this.menutitulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menutitulo.Size = new System.Drawing.Size(1360, 89);
+            this.menutitulo.Size = new System.Drawing.Size(1427, 89);
             this.menutitulo.TabIndex = 1;
             this.menutitulo.Text = "menuStrip2";
             // 
@@ -276,7 +278,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.DarkGray;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 22.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(25, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(314, 50);
@@ -294,7 +296,7 @@
             this.contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contenedor.Location = new System.Drawing.Point(0, 172);
             this.contenedor.Name = "contenedor";
-            this.contenedor.Size = new System.Drawing.Size(1360, 593);
+            this.contenedor.Size = new System.Drawing.Size(1427, 627);
             this.contenedor.TabIndex = 3;
             // 
             // label2
@@ -303,7 +305,7 @@
             this.label2.BackColor = System.Drawing.Color.DarkGray;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(1111, 29);
+            this.label2.Location = new System.Drawing.Point(1005, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 27);
             this.label2.TabIndex = 4;
@@ -316,7 +318,7 @@
             this.lblUsuario.BackColor = System.Drawing.Color.DarkGray;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.Color.Black;
-            this.lblUsuario.Location = new System.Drawing.Point(1210, 29);
+            this.lblUsuario.Location = new System.Drawing.Point(1107, 29);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(115, 27);
             this.lblUsuario.TabIndex = 5;
@@ -327,7 +329,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1360, 765);
+            this.ClientSize = new System.Drawing.Size(1427, 799);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.contenedor);
