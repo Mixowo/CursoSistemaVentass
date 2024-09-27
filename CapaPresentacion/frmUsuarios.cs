@@ -122,11 +122,33 @@ namespace CapaPresentacion
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
+
+            Mensaje = string.Empty;
+
             dgvdata.Rows.Add(new object[] {"",txtid.Text,txtdocumento.Text,txtnombrecompleto.Text,txtcorreo.Text,txtclave.Text,
                 ((OpcionCombo)cborol.SelectedItem).Valor.ToString(),
                 ((OpcionCombo)cborol.SelectedItem).Texto.ToString(),
                 ((OpcionCombo)cboestado.SelectedItem).Texto.ToString()
             });
+
+            Usuario usuario = new Usuario() { 
+                IdUsuario = Convert.ToInt32(txtid.Text),
+                Documento = txtdocumento.Text,
+                NombreCompleto =  txtnombrecompleto.Text,
+                Correo = txtcorreo.Text,
+                Clave  =   txtclave.Text,
+                oRol = new Rol() { IdRol = Convert.ToInt32(((OpcionCombo)cborol.SelectedItem).Valor) },
+                Estado = Convert.ToInt32(((OpcionCombo)cborol.SelectedItem).Valor) == 1  ? true : false,
+
+
+            };
+
+            
+
+            int userId = new CN_Usuario().registrar(usuario, out Mensaje);
+
+            if(userId )
+
 
             Limpiar();
         }
