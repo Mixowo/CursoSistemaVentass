@@ -10,42 +10,59 @@ namespace CapaNegocio
 {
     public class CN_Usuario
     {
-        private CD_Usuario objcd_Usuario = new CD_Usuario();
+        private CD_Usuario objcd_usuario = new CD_Usuario();
 
         public List<Usuario> Listar()
         {
-            return objcd_Usuario.Listar();
+            return objcd_usuario.Listar();
         }
 
-        
-        public Tuple<int, string> registrar (Usuario user, out  string Mensaje) { 
+
+        public int Registrar(Usuario obj, out string Mensaje)
+        {
 
             Mensaje = string.Empty;
 
-            if (user.NombreCompleto == "") Mensaje = "Es necesario el nombre del usuario";
+            if (obj.NombreCompleto == "") Mensaje += "Es necesario el nombre del usuario\n";
 
-            if (user.Documento == "") Mensaje = "Es necesario el documento para el usuario";
+            if (obj.Documento == "") Mensaje += "Es necesario el documento para el usuario\n";
 
-            if (user.Clave == "") Mensaje = "Es necesario la clave para el usuario";
+            if (obj.Clave == "") Mensaje += "Es necesario la clave para el usuario\n";
 
-            if (user.Correo == "") Mensaje = "Es necesario el correo para el usuario";
-
-            if (Mensaje != string.Empty) return Tuple.Create(-1, Mensaje);
-
-            return objcd_Usuario.registrar(user, out Mensaje);
-
-
-
-        }
-        public bool  editar(Usuario user, out string Mensaje)
-        {
-            return objcd_Usuario.editar(user, out Mensaje);
-
+            if (Mensaje != string.Empty)
+            {
+                return 0;
+            }
+            else
+            {
+                return objcd_usuario.Registrar(obj, out Mensaje);
+            }
+            
         }
 
-        public bool eliminar(Usuario user, out string Mensaje)
+        public bool Editar(Usuario obj, out string Mensaje)
         {
-            return objcd_Usuario.eliminar(user, out Mensaje);
+            Mensaje = string.Empty;
+
+            if (obj.NombreCompleto == "") Mensaje += "Es necesario el nombre del usuario\n";
+
+            if (obj.Documento == "") Mensaje += "Es necesario el documento para el usuario\n";
+
+            if (obj.Clave == "") Mensaje += "Es necesario la clave para el usuario\n";
+
+            if (Mensaje != string.Empty)
+            {
+                return false;
+            }
+            else
+            {
+                return objcd_usuario.Editar(obj, out Mensaje);
+            }
+        }
+
+        public bool Eliminar(Usuario obj, out string Mensaje)
+        {
+            return objcd_usuario.Eliminar(obj, out Mensaje);
         }
     }
 }

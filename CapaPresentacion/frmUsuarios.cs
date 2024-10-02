@@ -135,35 +135,40 @@ namespace CapaPresentacion
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
+            string mensaje = string.Empty;
+            
 
-            Mensaje = string.Empty;
-
-            dgvdata.Rows.Add(new object[] {"",txtid.Text,txtdocumento.Text,txtnombrecompleto.Text,txtcorreo.Text,txtclave.Text,
-                ((OpcionCombo)cborol.SelectedItem).Valor.ToString(),
-                ((OpcionCombo)cborol.SelectedItem).Texto.ToString(),
-                ((OpcionCombo)cboestado.SelectedItem).Texto.ToString()
-            });
-
-            Usuario usuario = new Usuario() { 
+            Usuario objusuario = new Usuario() {
                 IdUsuario = Convert.ToInt32(txtid.Text),
                 Documento = txtdocumento.Text,
-                NombreCompleto =  txtnombrecompleto.Text,
+                NombreCompleto = txtnombrecompleto.Text,
                 Correo = txtcorreo.Text,
-                Clave  =   txtclave.Text,
+                Clave = txtclave.Text,
                 oRol = new Rol() { IdRol = Convert.ToInt32(((OpcionCombo)cborol.SelectedItem).Valor) },
-                Estado = Convert.ToInt32(((OpcionCombo)cborol.SelectedItem).Valor) == 1  ? true : false,
+                Estado = Convert.ToInt32(((OpcionCombo)cborol.SelectedItem).Valor) == 1 ? true : false,
 
 
             };
 
+            int idusuariogenerado = new CN_Usuario().Registrar(objusuario, out mensaje);
+
+            if (idusuariogenerado != 0)
+            {
+                dgvdata.Rows.Add(new object[] {"",idusuariogenerado,txtdocumento.Text,txtnombrecompleto.Text,txtcorreo.Text,txtclave.Text,
+                ((OpcionCombo)cborol.SelectedItem).Valor.ToString(),
+                ((OpcionCombo)cborol.SelectedItem).Texto.ToString(),
+                ((OpcionCombo)cboestado.SelectedItem).Texto.ToString()});
+
+                Limpiar();
+
+            }
+
+            else
+            {
+                MessageBox.Show(mensaje);
+            }
+
             
-
-            int userId = new CN_Usuario().registrar(usuario, out Mensaje);
-
-            if(userId )
-
-
-            Limpiar();
         }
 
         private void Limpiar()
