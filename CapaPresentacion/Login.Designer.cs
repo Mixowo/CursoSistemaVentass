@@ -71,7 +71,7 @@
             this.btningresar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btningresar.FlatAppearance.BorderSize = 0;
             this.btningresar.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btningresar.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btningresar.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btningresar.ForeColor = System.Drawing.Color.Black;
             this.btningresar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btningresar.IconColor = System.Drawing.Color.Black;
@@ -90,7 +90,7 @@
             this.btncancelar.Cursor = System.Windows.Forms.Cursors.Default;
             this.btncancelar.FlatAppearance.BorderSize = 0;
             this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btncancelar.Font = new System.Drawing.Font("Microsoft YaHei", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancelar.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncancelar.ForeColor = System.Drawing.Color.Black;
             this.btncancelar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btncancelar.IconColor = System.Drawing.Color.Black;
