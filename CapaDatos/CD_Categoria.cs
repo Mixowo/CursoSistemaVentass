@@ -98,6 +98,7 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("sp_EditarCategoria", oconexion);
+                    SqlCommand cmd = new SqlCommand("SP_EDITARCATEGORIA", oconexion);
                     cmd.Parameters.AddWithValue("IdCategoria", obj.IdCategoria);
                     cmd.Parameters.AddWithValue("Descripcion", obj.Descripcion);
                     cmd.Parameters.AddWithValue("Estado", obj.Estado);
@@ -135,9 +136,11 @@ namespace CapaDatos
                 using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
                 {
                     SqlCommand cmd = new SqlCommand("sp_EliminarCategoria", oconexion);
+                    SqlCommand cmd = new SqlCommand("SP_ELIMINARCATEGORIA", oconexion);
                     cmd.Parameters.AddWithValue("IdCategoria", obj.IdCategoria);
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+
                     cmd.CommandType = CommandType.StoredProcedure;
                     oconexion.Open();
 
@@ -158,5 +161,6 @@ namespace CapaDatos
 
             return respuesta;
         }
+
     }
 }
