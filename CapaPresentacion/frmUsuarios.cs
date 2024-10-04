@@ -22,8 +22,8 @@ namespace CapaPresentacion
 
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
-            cboestado.Items.Add(new OpcionCombo() { Valor = 1 , Texto = "Activo"});
-            cboestado.Items.Add(new OpcionCombo() { Valor = 0, Texto = "No Activo"});
+            cboestado.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Activo" });
+            cboestado.Items.Add(new OpcionCombo() { Valor = 0, Texto = "No Activo" });
             cboestado.DisplayMember = "Texto";
             cboestado.ValueMember = "Valor";
             cboestado.SelectedIndex = 0;
@@ -60,7 +60,7 @@ namespace CapaPresentacion
                 item.Estado == true ? "Activo" : "No Activo",
                 });
             }
-            
+
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -115,13 +115,13 @@ namespace CapaPresentacion
 
         private void iconButton3_Click(object sender, EventArgs e) //BOTON ELIMINAR
         {
-            if(Convert.ToInt32(txtid.Text) != 0)
+            if (Convert.ToInt32(txtid.Text) != 0)
             {
                 string mensaje = string.Empty;
                 Usuario objusuario = new Usuario()
                 {
                     IdUsuario = Convert.ToInt32(txtid.Text),
-                    
+
                 };
 
                 if (MessageBox.Show("¿Desea Eliminar el Usuario?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -158,16 +158,17 @@ namespace CapaPresentacion
         private void btnguardar_Click(object sender, EventArgs e)//BOTON GUARDAR
         {
             string mensaje = string.Empty;
-            
 
-            Usuario objusuario = new Usuario() {
+
+            Usuario objusuario = new Usuario()
+            {
                 IdUsuario = Convert.ToInt32(txtid.Text),
                 Documento = txtdocumento.Text,
                 NombreCompleto = txtnombrecompleto.Text,
                 Correo = txtcorreo.Text,
                 Clave = txtclave.Text,
                 oRol = new Rol() { IdRol = Convert.ToInt32(((OpcionCombo)cborol.SelectedItem).Valor) },
-                Estado = Convert.ToInt32(((OpcionCombo)cborol.SelectedItem).Valor) == 1 ? true : false,
+                Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1 ? true : false,
 
 
             };
@@ -180,6 +181,7 @@ namespace CapaPresentacion
                     dgvdata.Rows.Add(new object[] {"",idusuariogenerado,txtdocumento.Text,txtnombrecompleto.Text,txtcorreo.Text,txtclave.Text,
                 ((OpcionCombo)cborol.SelectedItem).Valor.ToString(),
                 ((OpcionCombo)cborol.SelectedItem).Texto.ToString(),
+                ((OpcionCombo)cboestado.SelectedItem).Valor.ToString(),
                 ((OpcionCombo)cboestado.SelectedItem).Texto.ToString()});
 
                     Limpiar();
@@ -217,7 +219,7 @@ namespace CapaPresentacion
                 }
             }
 
-            
+
         }
 
         private void Limpiar()
@@ -254,7 +256,7 @@ namespace CapaPresentacion
         {
             if (dgvdata.Columns[e.ColumnIndex].Name == "btnseleccionar")
             {
-                int  indice = e.RowIndex;
+                int indice = e.RowIndex;
 
                 if (indice >= 0)
                 {
@@ -266,7 +268,7 @@ namespace CapaPresentacion
                     txtclave.Text = dgvdata.Rows[indice].Cells["Clave"].Value.ToString();
                     txtconfirmarclave.Text = dgvdata.Rows[indice].Cells["Clave"].Value.ToString();
 
-                    foreach(OpcionCombo oc in cborol.Items)
+                    foreach (OpcionCombo oc in cborol.Items)
                     {
                         if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["IDRol"].Value))
                         {
@@ -316,6 +318,11 @@ namespace CapaPresentacion
             {
                 row.Visible = true;
             }
+        }
+
+        private void btnlimpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
     }
 }

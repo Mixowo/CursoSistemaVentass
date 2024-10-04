@@ -13,6 +13,7 @@ namespace CapaDatos
 {
     public class CD_Usuario
     {
+
         public List<Usuario> Listar()
         {
             List<Usuario> lista = new List<Usuario>();
