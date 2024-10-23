@@ -23,7 +23,8 @@ namespace CapaNegocio
 
             Mensaje = string.Empty;
 
-            if (obj.Descripcion == "") Mensaje += "Es necesario la Descripcion de la Categoria\n";
+
+            if (obj.Descripcion == "") Mensaje += "Es necesaria la descripcion para la Categoria\n";
 
             if (Mensaje != string.Empty)
             {
@@ -40,7 +41,7 @@ namespace CapaNegocio
         {
             Mensaje = string.Empty;
 
-            if (obj.Descripcion == "") Mensaje += "Es necesario la Descripcion de la Categoria\n";
+            if (obj.Descripcion == "") Mensaje += "Es necesaria la descripcion para la Categoria\n";
 
             if (Mensaje != string.Empty)
             {

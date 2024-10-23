@@ -324,5 +324,10 @@ namespace CapaPresentacion
         {
             Limpiar();
         }
+
+        private void cbobusqueda_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
