@@ -28,6 +28,7 @@ namespace CapaPresentacion
             cboestado.ValueMember = "Valor";
             cboestado.SelectedIndex = 0;
 
+            
 
             foreach (DataGridViewColumn columna in dgvdata.Columns)
             {
