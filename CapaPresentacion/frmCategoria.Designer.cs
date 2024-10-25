@@ -31,16 +31,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtindice = new System.Windows.Forms.TextBox();
-            this.btnlimpiarbuscador = new FontAwesome.Sharp.IconButton();
-            this.btnbuscar = new FontAwesome.Sharp.IconButton();
             this.txtbusqueda = new System.Windows.Forms.TextBox();
             this.cbobusqueda = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtid = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.btneliminar = new FontAwesome.Sharp.IconButton();
-            this.btnlimpiar = new FontAwesome.Sharp.IconButton();
-            this.btnguardar = new FontAwesome.Sharp.IconButton();
             this.dgvdata = new System.Windows.Forms.DataGridView();
             this.btnseleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +47,11 @@
             this.txtdescripcion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnlimpiarbuscador = new FontAwesome.Sharp.IconButton();
+            this.btnbuscar = new FontAwesome.Sharp.IconButton();
+            this.btneliminar = new FontAwesome.Sharp.IconButton();
+            this.btnlimpiar = new FontAwesome.Sharp.IconButton();
+            this.btnguardar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,41 +65,6 @@
             this.txtindice.Text = "-1";
             this.txtindice.Visible = false;
             this.txtindice.TextChanged += new System.EventHandler(this.txtindice_TextChanged);
-            // 
-            // btnlimpiarbuscador
-            // 
-            this.btnlimpiarbuscador.BackColor = System.Drawing.Color.Transparent;
-            this.btnlimpiarbuscador.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnlimpiarbuscador.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlimpiarbuscador.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnlimpiarbuscador.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            this.btnlimpiarbuscador.IconColor = System.Drawing.Color.Black;
-            this.btnlimpiarbuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnlimpiarbuscador.IconSize = 25;
-            this.btnlimpiarbuscador.Location = new System.Drawing.Point(1367, 12);
-            this.btnlimpiarbuscador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnlimpiarbuscador.Name = "btnlimpiarbuscador";
-            this.btnlimpiarbuscador.Size = new System.Drawing.Size(52, 34);
-            this.btnlimpiarbuscador.TabIndex = 52;
-            this.btnlimpiarbuscador.UseVisualStyleBackColor = false;
-            this.btnlimpiarbuscador.Click += new System.EventHandler(this.btnlimpiarbuscador_Click);
-            // 
-            // btnbuscar
-            // 
-            this.btnbuscar.BackColor = System.Drawing.Color.Transparent;
-            this.btnbuscar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnbuscar.ForeColor = System.Drawing.Color.Black;
-            this.btnbuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.btnbuscar.IconColor = System.Drawing.Color.Black;
-            this.btnbuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnbuscar.IconSize = 25;
-            this.btnbuscar.Location = new System.Drawing.Point(1299, 12);
-            this.btnbuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnbuscar.Name = "btnbuscar";
-            this.btnbuscar.Size = new System.Drawing.Size(52, 34);
-            this.btnbuscar.TabIndex = 51;
-            this.btnbuscar.UseVisualStyleBackColor = false;
-            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
             // txtbusqueda
             // 
@@ -156,59 +121,6 @@
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // btneliminar
-            // 
-            this.btneliminar.BackColor = System.Drawing.Color.Transparent;
-            this.btneliminar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btneliminar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btneliminar.ForeColor = System.Drawing.Color.Red;
-            this.btneliminar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btneliminar.IconColor = System.Drawing.Color.Black;
-            this.btneliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btneliminar.Location = new System.Drawing.Point(33, 266);
-            this.btneliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Size = new System.Drawing.Size(236, 31);
-            this.btneliminar.TabIndex = 44;
-            this.btneliminar.Text = "Eliminar";
-            this.btneliminar.UseVisualStyleBackColor = false;
-            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
-            // 
-            // btnlimpiar
-            // 
-            this.btnlimpiar.BackColor = System.Drawing.Color.Transparent;
-            this.btnlimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnlimpiar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlimpiar.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.btnlimpiar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnlimpiar.IconColor = System.Drawing.Color.Black;
-            this.btnlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnlimpiar.Location = new System.Drawing.Point(33, 219);
-            this.btnlimpiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnlimpiar.Name = "btnlimpiar";
-            this.btnlimpiar.Size = new System.Drawing.Size(236, 31);
-            this.btnlimpiar.TabIndex = 43;
-            this.btnlimpiar.Text = "Limpiar";
-            this.btnlimpiar.UseVisualStyleBackColor = false;
-            this.btnlimpiar.Click += new System.EventHandler(this.btnlimpiar_Click);
-            // 
-            // btnguardar
-            // 
-            this.btnguardar.BackColor = System.Drawing.Color.Transparent;
-            this.btnguardar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnguardar.ForeColor = System.Drawing.Color.LimeGreen;
-            this.btnguardar.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnguardar.IconColor = System.Drawing.Color.Black;
-            this.btnguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnguardar.Location = new System.Drawing.Point(33, 172);
-            this.btnguardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnguardar.Name = "btnguardar";
-            this.btnguardar.Size = new System.Drawing.Size(236, 31);
-            this.btnguardar.TabIndex = 42;
-            this.btnguardar.Text = "Guardar";
-            this.btnguardar.UseVisualStyleBackColor = false;
-            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
-            // 
             // dgvdata
             // 
             this.dgvdata.AllowUserToAddRows = false;
@@ -239,7 +151,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvdata.RowTemplate.Height = 28;
-            this.dgvdata.Size = new System.Drawing.Size(1121, 432);
+            this.dgvdata.Size = new System.Drawing.Size(1121, 446);
             this.dgvdata.TabIndex = 45;
             this.dgvdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentClick);
             this.dgvdata.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvdata_CellPainting);
@@ -336,15 +248,103 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(291, 516);
+            this.label1.Size = new System.Drawing.Size(291, 521);
             this.label1.TabIndex = 27;
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // btnlimpiarbuscador
+            // 
+            this.btnlimpiarbuscador.BackColor = System.Drawing.Color.Transparent;
+            this.btnlimpiarbuscador.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnlimpiarbuscador.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlimpiarbuscador.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnlimpiarbuscador.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            this.btnlimpiarbuscador.IconColor = System.Drawing.Color.Black;
+            this.btnlimpiarbuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnlimpiarbuscador.IconSize = 25;
+            this.btnlimpiarbuscador.Location = new System.Drawing.Point(1367, 12);
+            this.btnlimpiarbuscador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnlimpiarbuscador.Name = "btnlimpiarbuscador";
+            this.btnlimpiarbuscador.Size = new System.Drawing.Size(52, 34);
+            this.btnlimpiarbuscador.TabIndex = 52;
+            this.btnlimpiarbuscador.UseVisualStyleBackColor = false;
+            this.btnlimpiarbuscador.Click += new System.EventHandler(this.btnlimpiarbuscador_Click);
+            // 
+            // btnbuscar
+            // 
+            this.btnbuscar.BackColor = System.Drawing.Color.Transparent;
+            this.btnbuscar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnbuscar.ForeColor = System.Drawing.Color.Black;
+            this.btnbuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btnbuscar.IconColor = System.Drawing.Color.Black;
+            this.btnbuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnbuscar.IconSize = 25;
+            this.btnbuscar.Location = new System.Drawing.Point(1299, 12);
+            this.btnbuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnbuscar.Name = "btnbuscar";
+            this.btnbuscar.Size = new System.Drawing.Size(52, 34);
+            this.btnbuscar.TabIndex = 51;
+            this.btnbuscar.UseVisualStyleBackColor = false;
+            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
+            // 
+            // btneliminar
+            // 
+            this.btneliminar.BackColor = System.Drawing.Color.Transparent;
+            this.btneliminar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btneliminar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btneliminar.ForeColor = System.Drawing.Color.Red;
+            this.btneliminar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btneliminar.IconColor = System.Drawing.Color.Black;
+            this.btneliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btneliminar.Location = new System.Drawing.Point(33, 266);
+            this.btneliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.Size = new System.Drawing.Size(236, 31);
+            this.btneliminar.TabIndex = 44;
+            this.btneliminar.Text = "Eliminar";
+            this.btneliminar.UseVisualStyleBackColor = false;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
+            // 
+            // btnlimpiar
+            // 
+            this.btnlimpiar.BackColor = System.Drawing.Color.Transparent;
+            this.btnlimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnlimpiar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlimpiar.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.btnlimpiar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnlimpiar.IconColor = System.Drawing.Color.Black;
+            this.btnlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnlimpiar.Location = new System.Drawing.Point(33, 219);
+            this.btnlimpiar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnlimpiar.Name = "btnlimpiar";
+            this.btnlimpiar.Size = new System.Drawing.Size(236, 31);
+            this.btnlimpiar.TabIndex = 43;
+            this.btnlimpiar.Text = "Limpiar";
+            this.btnlimpiar.UseVisualStyleBackColor = false;
+            this.btnlimpiar.Click += new System.EventHandler(this.btnlimpiar_Click);
+            // 
+            // btnguardar
+            // 
+            this.btnguardar.BackColor = System.Drawing.Color.Transparent;
+            this.btnguardar.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnguardar.ForeColor = System.Drawing.Color.LimeGreen;
+            this.btnguardar.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnguardar.IconColor = System.Drawing.Color.Black;
+            this.btnguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnguardar.Location = new System.Drawing.Point(33, 172);
+            this.btnguardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.Size = new System.Drawing.Size(236, 31);
+            this.btnguardar.TabIndex = 42;
+            this.btnguardar.Text = "Guardar";
+            this.btnguardar.UseVisualStyleBackColor = false;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // frmCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1423, 516);
+            this.ClientSize = new System.Drawing.Size(1423, 521);
             this.Controls.Add(this.txtindice);
             this.Controls.Add(this.btnlimpiarbuscador);
             this.Controls.Add(this.btnbuscar);
