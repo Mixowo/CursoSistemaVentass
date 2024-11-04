@@ -57,7 +57,7 @@ namespace CapaPresentacion
                 dgvdata.Rows.Add(new object[] {"",item.IdUsuario,item.Documento,item.NombreCompleto,item.Correo,item.Clave,
                 item.oRol.IdRol,
                 item.oRol.Descripcion,
-                item.Estado == true ? "Activo" : "No Activo",
+                item.Estado ? "Activo" : "No Activo",
                 });
             }
 
@@ -152,7 +152,6 @@ namespace CapaPresentacion
 
         private void label9_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnguardar_Click(object sender, EventArgs e)//BOTON GUARDAR
@@ -326,6 +325,11 @@ namespace CapaPresentacion
         }
 
         private void cbobusqueda_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
         {
 
         }

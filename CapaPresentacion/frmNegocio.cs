@@ -19,14 +19,22 @@ namespace CapaPresentacion
         {
             InitializeComponent();
         }
-
         public Image ByteToImage(byte[] imageBytes)
         {
-            MemoryStream ms = new MemoryStream();
-            ms.Write(imageBytes, 0, imageBytes.Length);
-            Image image = new Bitmap(ms);
+            if (imageBytes == null || imageBytes.Length == 0)
+                return null;
 
-            return image;
+            try
+            {
+                using (MemoryStream ms = new MemoryStream(imageBytes))
+                {
+                    return Image.FromStream(ms);
+                }
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         private void iconButton1_Click(object sender, EventArgs e)

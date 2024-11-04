@@ -20,7 +20,7 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("select IdProveedor, Documento, RazonSocial, Correo, Telefono, Estado from PROVEEDOR");
+                    query.AppendLine("select IdProvedor, Documento, RazonSocial, Correo, Telefono, Estado from PROVEDOR");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.CommandType = CommandType.Text;
@@ -33,7 +33,7 @@ namespace CapaDatos
                         {
                             lista.Add(new Proveedor()
                             {
-                                IdProveedor = Convert.ToInt32(dr["IdProveedor"]),
+                                IdProveedor = Convert.ToInt32(dr["IdProvedor"]),
                                 Documento = dr["Documento"].ToString(),
                                 RazonSocial = dr["RazonSocial"].ToString(),
                                 Correo = dr["Correo"].ToString(),
