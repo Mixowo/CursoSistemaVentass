@@ -301,17 +301,17 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modales\modalProducto.cs">
+    <Compile Include="Modals\mdProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modales\modalProducto.Designer.cs">
-      <DependentUpon>modalProducto.cs</DependentUpon>
+    <Compile Include="Modals\mdProductos.Designer.cs">
+      <DependentUpon>mdProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modales\modalProvedor.cs">
+    <Compile Include="Modals\mdProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Modales\modalProvedor.Designer.cs">
-      <DependentUpon>modalProvedor.cs</DependentUpon>
+    <Compile Include="Modals\mdProveedores.Designer.cs">
+      <DependentUpon>mdProveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -355,11 +355,11 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modales\modalProducto.resx">
-      <DependentUpon>modalProducto.cs</DependentUpon>
+    <EmbeddedResource Include="Modals\mdProductos.resx">
+      <DependentUpon>mdProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modales\modalProvedor.resx">
-      <DependentUpon>modalProvedor.cs</DependentUpon>
+    <EmbeddedResource Include="Modals\mdProveedores.resx">
+      <DependentUpon>mdProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -401,5 +401,6 @@
   <ItemGroup>
     <None Include="Resources\checar1.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

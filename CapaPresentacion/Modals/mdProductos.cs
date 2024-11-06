@@ -11,24 +11,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CapaPresentacion.Modales
+namespace CapaPresentacion.Modals
 {
-    public partial class modalProvedor : Form
-    {
 
-        public Proveedor provedor { get; set; }
-        
-        public modalProvedor()
+    public partial class mdProducto : Form
+    {
+        public Producto _Producto { get; set; }
+
+        public mdProducto()
         {
             InitializeComponent();
         }
 
-        private void modalProvedor_Load(object sender, EventArgs e)
+        private void mdProducto_Load(object sender, EventArgs e)
         {
-
             foreach (DataGridViewColumn columna in dgvdata.Columns)
             {
-                if (columna.Visible == true && columna.Name != "btnseleccionar")
+
+                if (columna.Visible == true)
                 {
                     cbobusqueda.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
                 }
@@ -37,43 +37,39 @@ namespace CapaPresentacion.Modales
             cbobusqueda.ValueMember = "Valor";
             cbobusqueda.SelectedIndex = 0;
 
+            List<Producto> lista = new CN_Producto().Listar();
 
-
-            //MOSTRAR TODOS LOS USUARIOS
-            List<Proveedor> lista = new CN_Proveedor().Listar();
-
-            foreach (Proveedor item in lista)
+            foreach (Producto item in lista)
             {
-                dgvdata.Rows.Add(new object[] { "", item.IdProveedor, item.Documento, item.RazonSocial });
+                dgvdata.Rows.Add(new object[] {
+                    item.IdProducto,
+                    item.Codigo,
+                    item.Nombre,
+                    item.oCategoria.Descripcion,
+                    item.Stock,
+                    item.PrecioCompra,
+                    item.PrecioVenta
+                });
             }
-        }
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void dgvdata_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            int isRow = e.RowIndex;
-            int isCol = e.ColumnIndex;
-
-            if(isRow >= 0 && isCol > 0)
+            int iRow = e.RowIndex;
+            int iColum = e.ColumnIndex;
+            if (iRow >= 0 && iColum > 0)
             {
-               this.provedor = new Proveedor() { 
-                    IdProveedor = Convert.ToInt32(dgvdata.Rows[isRow].Cells["Id"].Value.ToString()),
-                    Documento = dgvdata.Rows[isRow].Cells["Documento"].Value.ToString(),
-                    RazonSocial = dgvdata.Rows[isRow].Cells["RazonSocial"].Value.ToString(),
-
+                _Producto = new Producto()
+                {
+                    IdProducto = Convert.ToInt32(dgvdata.Rows[iRow].Cells["Id"].Value.ToString()),
+                    Codigo = dgvdata.Rows[iRow].Cells["Codigo"].Value.ToString(),
+                    Nombre = dgvdata.Rows[iRow].Cells["Nombre"].Value.ToString(),
+                    Stock = Convert.ToInt32(dgvdata.Rows[iRow].Cells["Stock"].Value.ToString()),
+                    PrecioCompra = Convert.ToDecimal(dgvdata.Rows[iRow].Cells["PrecioCompra"].Value.ToString()),
+                    PrecioVenta = Convert.ToDecimal(dgvdata.Rows[iRow].Cells["PrecioVenta"].Value.ToString()),
                 };
-
                 this.DialogResult = DialogResult.OK;
                 this.Close();
-
             }
         }
 
@@ -85,14 +81,11 @@ namespace CapaPresentacion.Modales
             {
                 foreach (DataGridViewRow row in dgvdata.Rows)
                 {
+
                     if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtbusqueda.Text.Trim().ToUpper()))
-                    {
                         row.Visible = true;
-                    }
                     else
-                    {
                         row.Visible = false;
-                    }
                 }
             }
         }
