@@ -92,5 +92,10 @@ namespace CapaPresentacion.Modals
                 row.Visible = true;
             }
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
