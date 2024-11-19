@@ -193,7 +193,6 @@
             this.btnbuscar.BackColor = System.Drawing.Color.White;
             this.btnbuscar.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnbuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnbuscar.ForeColor = System.Drawing.Color.Black;
             this.btnbuscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
             this.btnbuscar.IconColor = System.Drawing.Color.Black;
@@ -212,7 +211,6 @@
             this.btnlimpiarbuscador.BackColor = System.Drawing.Color.White;
             this.btnlimpiarbuscador.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnlimpiarbuscador.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnlimpiarbuscador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnlimpiarbuscador.ForeColor = System.Drawing.Color.Black;
             this.btnlimpiarbuscador.IconChar = FontAwesome.Sharp.IconChar.Broom;
             this.btnlimpiarbuscador.IconColor = System.Drawing.Color.Black;
