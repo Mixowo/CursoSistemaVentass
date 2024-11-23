@@ -8,7 +8,7 @@ namespace CapaEntidad
 {
     public class Venta
     {
-        public int idVenta { get; set; }
+        public int IdVenta { get; set; }
         public Usuario oUsuario { get; set; }
         public string TipoDocumento { get; set; }
         public string NumeroDocumento { get; set; }
@@ -17,7 +17,7 @@ namespace CapaEntidad
         public decimal MontoPago { get; set; }
         public decimal MontoCambio { get; set; }
         public decimal MontoTotal { get; set; }
-        public List<Detalle_Venta> oDetalle_Ventas { get; set; }
+        public List<Detalle_Venta> oDetalle_Venta { get; set; }
         public string FechaRegistro { get; set; }
     }
 }
