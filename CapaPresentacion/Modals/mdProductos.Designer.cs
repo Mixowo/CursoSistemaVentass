@@ -82,7 +82,7 @@
             this.dgvdata.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvdata.RowTemplate.Height = 28;
             this.dgvdata.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvdata.Size = new System.Drawing.Size(644, 293);
+            this.dgvdata.Size = new System.Drawing.Size(618, 293);
             this.dgvdata.TabIndex = 69;
             this.dgvdata.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellDoubleClick);
             // 
@@ -148,7 +148,7 @@
             // 
             // txtbusqueda
             // 
-            this.txtbusqueda.Location = new System.Drawing.Point(301, 63);
+            this.txtbusqueda.Location = new System.Drawing.Point(276, 63);
             this.txtbusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.txtbusqueda.Name = "txtbusqueda";
             this.txtbusqueda.Size = new System.Drawing.Size(201, 22);
@@ -158,7 +158,7 @@
             // 
             this.cbobusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbobusqueda.FormattingEnabled = true;
-            this.cbobusqueda.Location = new System.Drawing.Point(139, 62);
+            this.cbobusqueda.Location = new System.Drawing.Point(114, 62);
             this.cbobusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.cbobusqueda.Name = "cbobusqueda";
             this.cbobusqueda.Size = new System.Drawing.Size(153, 24);
@@ -168,7 +168,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(49, 66);
+            this.label11.Location = new System.Drawing.Point(24, 66);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(75, 16);
@@ -184,7 +184,7 @@
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Padding = new System.Windows.Forms.Padding(4, 7, 0, 0);
-            this.label10.Size = new System.Drawing.Size(643, 91);
+            this.label10.Size = new System.Drawing.Size(618, 91);
             this.label10.TabIndex = 63;
             this.label10.Text = "Lista de Productos:";
             // 
@@ -198,7 +198,7 @@
             this.btnbuscar.IconColor = System.Drawing.Color.Black;
             this.btnbuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnbuscar.IconSize = 16;
-            this.btnbuscar.Location = new System.Drawing.Point(515, 60);
+            this.btnbuscar.Location = new System.Drawing.Point(490, 60);
             this.btnbuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnbuscar.Name = "btnbuscar";
             this.btnbuscar.Size = new System.Drawing.Size(56, 28);
@@ -216,7 +216,7 @@
             this.btnlimpiarbuscador.IconColor = System.Drawing.Color.Black;
             this.btnlimpiarbuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnlimpiarbuscador.IconSize = 18;
-            this.btnlimpiarbuscador.Location = new System.Drawing.Point(579, 60);
+            this.btnlimpiarbuscador.Location = new System.Drawing.Point(554, 60);
             this.btnlimpiarbuscador.Margin = new System.Windows.Forms.Padding(4);
             this.btnlimpiarbuscador.Name = "btnlimpiarbuscador";
             this.btnlimpiarbuscador.Size = new System.Drawing.Size(56, 28);
@@ -229,7 +229,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(663, 423);
+            this.ClientSize = new System.Drawing.Size(639, 423);
             this.Controls.Add(this.dgvdata);
             this.Controls.Add(this.btnbuscar);
             this.Controls.Add(this.btnlimpiarbuscador);
