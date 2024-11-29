@@ -43,7 +43,15 @@ namespace CapaPresentacion
                 form.Show();
                 this.Hide();
 
-                form.FormClosing += frm_closing;
+                form.FormClosing += (s, args) =>
+                {
+                    
+                    FormManager.CloseAllForms();
+                    
+                    txtdocumento.Text = "";
+                    txtclave.Text = "";
+                    this.Show();
+                };
             }
             else
             {
@@ -58,9 +66,7 @@ namespace CapaPresentacion
 
         private void frm_closing(object ssender, FormClosingEventArgs e)
         {
-            txtdocumento.Text = "";
-            txtclave.Text = "";
-            this.Show();
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -70,7 +76,7 @@ namespace CapaPresentacion
 
         private void Login_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void txtclave_TextChanged(object sender, EventArgs e)

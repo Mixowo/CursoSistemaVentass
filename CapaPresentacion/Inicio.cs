@@ -38,7 +38,7 @@ namespace CapaPresentacion
             {
                 MenuActivo.BackColor = Color.White;
             }
-            menu.BackColor = Color.Gray;
+            menu.BackColor = Color.White;
             MenuActivo = menu;
 
             if (FormularioActivo != null)
@@ -56,7 +56,11 @@ namespace CapaPresentacion
         }
         private void Usuarios_Click(object sender, EventArgs e) //menuusuarios
         {
-            AbrirFormulario((IconMenuItem)sender, new frmUsuarios());
+            //AbrirFormulario((IconMenuItem)sender, new frmUsuarios());
+            //frmUsuarios fu = new frmUsuarios();
+            //fu.ShowDialog();
+            FormManager.ShowForm(() => new frmUsuarios());
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -93,71 +97,103 @@ namespace CapaPresentacion
 
         private void submenucategoria_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menumantenedor, new frmCategoria());
+            //AbrirFormulario(menumantenedor, new frmCategoria());
+            //frmCategoria fc = new frmCategoria();
+            //fc.ShowDialog();
+            FormManager.ShowForm(() => new frmCategoria());
+
+
         }
 
         private void submenuproducto_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menumantenedor, new frmProducto());
+            //AbrirFormulario(menumantenedor, new frmProducto());
+            //frmProducto fp = new frmProducto();
+            //fp.ShowDialog();
+            FormManager.ShowForm(() => new frmProducto());
+
+
         }
 
         private void submenuregistrar_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menuventas, new frmVentas(usuarioActual));
+            //AbrirFormulario(menuventas, new frmVentas(usuarioActual));
+            //frmVentas fv = new frmVentas(usuarioActual);
+            //fv.ShowDialog();
+            FormManager.ShowForm(() => new frmVentas(usuarioActual));
+
         }
 
         private void submenuverdetalleventa_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menuventas, new frmDetalleVenta());
+            //AbrirFormulario(menuventas, new frmDetalleVenta());
+            //frmDetalleVenta fdv = new frmDetalleVenta();
+            //fdv.ShowDialog();
+            FormManager.ShowForm(() => new frmDetalleVenta());
+
         }
 
         private void submenuregistrarcompra_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menucompras, new frmCompras(usuarioActual));
+            //AbrirFormulario(menucompras, new frmCompras(usuarioActual));
+            //frmCompras fc = new frmCompras(usuarioActual);
+            //fc.ShowDialog();
+            FormManager.ShowForm(() => new frmCompras(usuarioActual));
+
         }
 
         private void submenuverdetallecompra_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menucompras, new frmDetalleCompra());
+            //AbrirFormulario(menucompras, new frmDetalleCompra());
+            //frmDetalleCompra fdc = new frmDetalleCompra();
+            //fdc.ShowDialog();
+            FormManager.ShowForm(() => new frmDetalleCompra());
+
         }
 
         private void menuclientes_Click(object sender, EventArgs e)
         {
-            AbrirFormulario((IconMenuItem)sender, new frmClientes());
+            //AbrirFormulario((IconMenuItem)sender, new frmClientes());
+            //frmClientes fcl = new frmClientes();
+            //fcl.ShowDialog();
+            FormManager.ShowForm(() => new frmClientes());
+
         }
 
         private void menuproveedores_Click(object sender, EventArgs e)
         {
-            AbrirFormulario((IconMenuItem)sender, new frmProveedores());
+            //AbrirFormulario((IconMenuItem)sender, new frmProveedores());
+            //frmProveedores fpr = new frmProveedores();
+            //fpr.ShowDialog();
+            FormManager.ShowForm(() => new frmProveedores());
+
         }
 
         private void submenunegocio_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menumantenedor, new frmNegocio());
+            //AbrirFormulario(menumantenedor, new frmNegocio());
+            FormManager.ShowForm(() => new frmNegocio());
+
         }
 
         private void submenureportecompras_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menureportes, new frmReporteCompras());
+            //AbrirFormulario(menureportes, new frmReporteCompras());
+            FormManager.ShowForm(() => new frmReporteCompras());
+
         }
 
         private void submenureporteventas_Click(object sender, EventArgs e)
         {
-            AbrirFormulario(menureportes, new frmReporteVentas());
+            //AbrirFormulario(menureportes, new frmReporteVentas());
+            FormManager.ShowForm(() => new frmReporteVentas());
+
         }
 
         private void menuacercade_Click(object sender, EventArgs e)
         {
             mdAcercade md = new mdAcercade();
             md.ShowDialog();
-        }
-
-        private void btnsalir_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("¿Desea salir?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                this.Close();
-            }
         }
     }
 }

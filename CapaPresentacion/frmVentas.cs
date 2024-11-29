@@ -226,6 +226,7 @@ namespace CapaPresentacion
                     {
                         dgvdata.Rows.RemoveAt(index);
                         calcularTotal();
+                        calcularcambio();
                     }
 
                 }

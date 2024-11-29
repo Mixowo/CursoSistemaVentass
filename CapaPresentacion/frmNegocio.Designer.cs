@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNegocio));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtdireccion = new System.Windows.Forms.TextBox();
@@ -47,11 +48,11 @@
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(909, 638);
+            this.label1.Size = new System.Drawing.Size(909, 418);
             this.label1.TabIndex = 1;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -100,7 +101,7 @@
             // btnguardarcambios
             // 
             this.btnguardarcambios.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnguardarcambios.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnguardarcambios.ForeColor = System.Drawing.Color.Brown;
             this.btnguardarcambios.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnguardarcambios.IconColor = System.Drawing.Color.Black;
             this.btnguardarcambios.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -149,7 +150,7 @@
             // 
             this.btnsubir.BackColor = System.Drawing.SystemColors.Window;
             this.btnsubir.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnsubir.ForeColor = System.Drawing.Color.Black;
+            this.btnsubir.ForeColor = System.Drawing.Color.Brown;
             this.btnsubir.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnsubir.IconColor = System.Drawing.Color.Black;
             this.btnsubir.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -174,7 +175,7 @@
             // 
             // picLogo
             // 
-            this.picLogo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picLogo.Location = new System.Drawing.Point(34, 60);
             this.picLogo.Name = "picLogo";
             this.picLogo.Size = new System.Drawing.Size(256, 235);
@@ -185,7 +186,7 @@
             // 
             // label9
             // 
-            this.label9.BackColor = System.Drawing.Color.White;
+            this.label9.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(12, 9);
             this.label9.Name = "label9";
@@ -198,12 +199,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1432, 638);
+            this.ClientSize = new System.Drawing.Size(915, 418);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmNegocio";
-            this.Text = "frmNegocio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Negocio";
             this.Load += new System.EventHandler(this.frmNegocio_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

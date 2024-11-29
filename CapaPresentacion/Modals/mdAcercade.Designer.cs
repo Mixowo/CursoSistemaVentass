@@ -38,12 +38,12 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(99, 364);
+            this.label3.Location = new System.Drawing.Point(19, 366);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(165, 16);
+            this.label3.Size = new System.Drawing.Size(265, 16);
             this.label3.TabIndex = 36;
-            this.label3.Text = "DESARROLLADO POR: G";
+            this.label3.Text = "GRACIAS POR CORROMPERTE 4 VECES";
             // 
             // label4
             // 

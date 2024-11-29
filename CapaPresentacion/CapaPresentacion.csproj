@@ -232,6 +232,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormManager.cs" />
     <Compile Include="frmCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
