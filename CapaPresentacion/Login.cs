@@ -14,9 +14,14 @@ namespace CapaPresentacion
 {
     public partial class Login : Form
     {
+        private int intentosFallidos = 0;
+        private System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+
         public Login()
         {
             InitializeComponent();
+            timer.Interval = 30000;
+            timer.Tick += Timer_Tick;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -29,15 +34,22 @@ namespace CapaPresentacion
 
         }
 
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            btningresar.Enabled = true;
+            timer.Stop();
+        }
+
         private void btningresar_Click(object sender, EventArgs e)
         {
             List<Usuario> TEST = new CN_Usuario().Listar();
 
             Usuario ousuario = new CN_Usuario().Listar().Where(u => u.Documento == txtdocumento.Text && u.Clave == txtclave.Text).FirstOrDefault();
 
-
             if (ousuario != null)
             {
+                intentosFallidos = 0;
+
                 Inicio form = new Inicio(ousuario);
 
                 form.Show();
@@ -45,9 +57,8 @@ namespace CapaPresentacion
 
                 form.FormClosing += (s, args) =>
                 {
-                    
                     FormManager.CloseAllForms();
-                    
+
                     txtdocumento.Text = "";
                     txtclave.Text = "";
                     this.Show();
@@ -55,7 +66,18 @@ namespace CapaPresentacion
             }
             else
             {
-                MessageBox.Show("No se encontro el Usuario","Mensaje",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                intentosFallidos++;
+
+                if (intentosFallidos >= 5)
+                {
+                    MessageBox.Show("Demasiados intentos fallidos. Debes esperar 30 segundos antes de intentar nuevamente.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    btningresar.Enabled = false;
+                    timer.Start();
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el Usuario", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
         }
 
@@ -81,7 +103,7 @@ namespace CapaPresentacion
 
         private void txtclave_TextChanged(object sender, EventArgs e)
         {
-
+            //contraseña login
         }
     }
 }

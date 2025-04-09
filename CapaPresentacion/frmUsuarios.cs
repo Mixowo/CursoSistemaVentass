@@ -80,7 +80,7 @@ namespace CapaPresentacion
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-
+            //contraseña
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -105,7 +105,7 @@ namespace CapaPresentacion
 
         private void txtconfirmarclave_TextChanged(object sender, EventArgs e)
         {
-
+            //confirmar
         }
 
         private void cborol_SelectedIndexChanged(object sender, EventArgs e)
@@ -158,6 +158,11 @@ namespace CapaPresentacion
         {
             string mensaje = string.Empty;
 
+            if (txtclave.Text != txtconfirmarclave.Text)
+            {
+                MessageBox.Show("La contraseña y la confirmación de contraseña no coinciden.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             Usuario objusuario = new Usuario()
             {

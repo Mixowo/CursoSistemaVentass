@@ -287,41 +287,47 @@ namespace CapaPresentacion
             }
         }
 
-        private void calcularcambio()
+        private bool calcularcambio()
         {
-
+            // Verifica si el campo de total a pagar está vacío
             if (txttotalpagar.Text.Trim() == "")
             {
                 MessageBox.Show("No existen productos en la venta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
+                return false;
             }
-
 
             decimal pagacon;
             decimal total = Convert.ToDecimal(txttotalpagar.Text);
 
+            // Si el campo de pago está vacío, lo establece en 0
             if (txtpagocon.Text.Trim() == "")
             {
                 txtpagocon.Text = "0";
             }
 
+            // Intenta convertir el valor de pago a decimal
             if (decimal.TryParse(txtpagocon.Text.Trim(), out pagacon))
             {
-
+                // Si el pago es menor que el total, muestra un mensaje de error
                 if (pagacon < total)
                 {
-                    txtcambio.Text = "0.00";
+                    MessageBox.Show("El pago es insuficiente para realizar la venta.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false; // Pago insuficiente
                 }
                 else
                 {
+                    // Si el pago es suficiente, calcula el cambio
                     decimal cambio = pagacon - total;
                     txtcambio.Text = cambio.ToString("0.00");
-
+                    return true; // Pago suficiente
                 }
             }
-
-
-
+            else
+            {
+                // Si el valor de pago no es un número válido, muestra un mensaje de error
+                MessageBox.Show("El valor de pago no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false; // Pago no válido
+            }
         }
 
         private void txtpagocon_KeyDown(object sender, KeyEventArgs e)
@@ -334,13 +340,12 @@ namespace CapaPresentacion
 
         private void btncrearventaa_Click(object sender, EventArgs e)
         {
-
+            // Validaciones iniciales
             if (txtdocumentocliente.Text == "")
             {
                 MessageBox.Show("Debe ingresar documento del cliente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-
 
             if (txtnombrecliente.Text == "")
             {
@@ -354,31 +359,34 @@ namespace CapaPresentacion
                 return;
             }
 
+            // Validar el pago y calcular el cambio
+            if (!calcularcambio())
+            {
+                return; // Detener la ejecución si el pago es insuficiente o no válido
+            }
 
-
+            // Crear el detalle de la venta
             DataTable detalle_venta = new DataTable();
-
             detalle_venta.Columns.Add("IdProducto", typeof(int));
             detalle_venta.Columns.Add("PrecioVenta", typeof(decimal));
             detalle_venta.Columns.Add("Cantidad", typeof(int));
             detalle_venta.Columns.Add("SubTotal", typeof(decimal));
 
-
             foreach (DataGridViewRow row in dgvdata.Rows)
             {
                 detalle_venta.Rows.Add(new object[] {
-                    row.Cells["IdProducto"].Value.ToString(),
-                    row.Cells["Precio"].Value.ToString(),
-                    row.Cells["Cantidad"].Value.ToString(),
-                    row.Cells["SubTotal"].Value.ToString()
-                });
+            row.Cells["IdProducto"].Value.ToString(),
+            row.Cells["Precio"].Value.ToString(),
+            row.Cells["Cantidad"].Value.ToString(),
+            row.Cells["SubTotal"].Value.ToString()
+        });
             }
 
-
+            // Obtener el número de documento
             int idcorrelativo = new CN_Venta().ObtenerCorrelativo();
             string numeroDocumento = string.Format("{0:00000}", idcorrelativo);
-            calcularcambio();
 
+            // Crear el objeto Venta
             Venta oVenta = new Venta()
             {
                 oUsuario = new Usuario() { IdUsuario = _Usuario.IdUsuario },
@@ -391,6 +399,7 @@ namespace CapaPresentacion
                 MontoTotal = Convert.ToDecimal(txttotalpagar.Text)
             };
 
+            // Registrar la venta
             string mensaje = string.Empty;
             bool respuesta = new CN_Venta().Registrar(oVenta, detalle_venta, out mensaje);
 
@@ -401,6 +410,7 @@ namespace CapaPresentacion
                 if (result == DialogResult.Yes)
                     Clipboard.SetText(numeroDocumento);
 
+                // Limpiar los campos después de una venta exitosa
                 txtdocumentocliente.Text = "";
                 txtnombrecliente.Text = "";
                 dgvdata.Rows.Clear();
@@ -411,8 +421,17 @@ namespace CapaPresentacion
             else
             {
                 MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
             }
+        }
+
+        private void txtpagocon_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtcambio_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

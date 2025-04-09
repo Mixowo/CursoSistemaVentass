@@ -549,6 +549,7 @@
             this.txtcambio.ReadOnly = true;
             this.txtcambio.Size = new System.Drawing.Size(125, 24);
             this.txtcambio.TabIndex = 207;
+            this.txtcambio.TextChanged += new System.EventHandler(this.txtcambio_TextChanged);
             // 
             // txtpagocon
             // 
@@ -558,6 +559,7 @@
             this.txtpagocon.Name = "txtpagocon";
             this.txtpagocon.Size = new System.Drawing.Size(125, 24);
             this.txtpagocon.TabIndex = 206;
+            this.txtpagocon.TextChanged += new System.EventHandler(this.txtpagocon_TextChanged);
             this.txtpagocon.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtpagocon_KeyDown);
             this.txtpagocon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpagocon_KeyPress);
             // 
